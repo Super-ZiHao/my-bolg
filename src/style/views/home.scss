@@ -1,0 +1,50 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.home-card {
+  margin-top: -100px;
+  width: 100%;
+  max-width: 700px;
+  min-width: 400px;
+}
+.home-hello {
+  transform: translateX(100vw);
+  animation: X ease .8s forwards;
+}
+.home-title {
+  transform: translateX(100vw);
+  animation: X ease 1s forwards;
+}
+.home-profile {
+  margin: 30px 0;
+  color: #fff;
+  transform: translateX(100vw);
+  animation: X ease 1.1s forwards;
+}
+.home-button {
+  display: flex;
+  transform: translateX(100vw);
+  animation: X ease 1.2s forwards;
+  .home-button-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $color-1;
+    border-radius: 25px;
+    width: 40%;
+    height: 50px;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease;
+    &:hover {
+      background-color: $color-1;
+    }
+    &.active {
+      color: $color-1
+    }
+  }
+}

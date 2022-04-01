@@ -1,0 +1,22 @@
+.ZH-menu {
+  width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+.ZH-menu-item {
+  display: flex;
+  align-items: center;
+}
+.ZH-menu-item-title {
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  transition: all ease .6s;
+  &:hover {
+    color: $color-1;
+  }
+}
+.ZH-menu-item-text {
+  @include text-line();
+}

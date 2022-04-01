@@ -1,0 +1,17 @@
+@keyframes X {
+  form {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0vw);
+  }
+}
+
+@keyframes opacity {
+  form {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
