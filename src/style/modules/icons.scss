@@ -1,0 +1,21 @@
+$iconAndColor: (
+/*
+  'demo': (
+    ('red', 32px, 32px),
+    ('blue', 40px, 40px)
+  ) 
+*/
+);
+@each $name,$values in $iconAndColor {
+  @each $item in $values {
+    .icon-#{$name}-#{nth($values, 1)} {
+      width: nth($values, 2);
+      height: nth($values, 3);
+      background: 
+        linear-gradient(nth($values, 1), nth($values, 1)),
+        url('../../images/#{$name}.svg'),
+        #fff;
+      background-blend-mode: lighten, normal;      
+    }
+  }
+}

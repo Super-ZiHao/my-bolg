@@ -2,13 +2,15 @@
 @import './modules/root.scss';
 // 原子类
 @import './modules/atomics/index.scss';
-@import './modules/bg-color.scss';
+@import './modules/color.scss';
 // 滚动条
 @import './modules//scroll.scss';
 // 重置默认样式
 @import './modules/reset.scss';
 // 动画
 @import './modules/animation.scss';
+// icon 图标
+@import './modules/icons.scss';
 // 组件样式
 @import '../components/styles/index.scss';
 

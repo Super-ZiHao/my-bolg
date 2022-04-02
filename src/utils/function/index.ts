@@ -1,6 +1,7 @@
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
 
+// 打印 PDF
 export const printPDF = () => {
   html2canvas(document.getElementsByTagName('body')[0]).then((canvas) => {
     // 通过 html2canvas 将 html 渲染成 canvas，然后获取图片数据

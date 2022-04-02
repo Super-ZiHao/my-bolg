@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { Empty } from 'antd'
 import { worksList } from '@/utils/constants'
-import { exhibition, unExhibition } from '@/action'
-import { initStateType } from '@/reducer'
+import { exhibition, unExhibition } from '@/store/action'
+import { initStateType } from '@/store/reducer'
 
 type Props = {}
 const Works: React.FC<Props> = () => {
