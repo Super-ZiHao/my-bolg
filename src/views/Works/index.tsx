@@ -1,25 +1,26 @@
+import { useDispatch, useSelector } from 'react-redux'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { Empty } from 'antd'
 import { worksList } from '@/utils/constants'
-import { useState } from 'react'
+import { exhibition, unExhibition } from '@/action'
+import { initStateType } from '@/reducer'
 
 type Props = {}
 const Works: React.FC<Props> = () => {
-  const [left, setLeft] = useState<string[]>(['calc(-100% - 192px)', '0'])
+  const dispatch = useDispatch();
+  const isExhibition = useSelector<initStateType, [string, string]>((state) => state.isExhibition)
   const navigate = useNavigate()
   const open = (path: string) => {
-    setLeft(['0', 'calc(100% + 192px)'])
+    dispatch(exhibition())
     navigate(`/works/${path}`)
   }
   const handleBack = () => {
-    setLeft(['calc(-100% - 192px)', '0'])
-    setTimeout(() => {
-      navigate(-1);
-    }, 1000)
+    dispatch(unExhibition())
+    navigate(-1);
   }
   return (
     <div className="flex w-full h-full relative">
-      <div className="main-card exhibition" style={{ left: left[0] }}>
+      <div className="main-card exhibition" style={{ left: isExhibition[0] }}>
         <div className="exhibition-left">
           <Outlet />
         </div>
@@ -27,7 +28,7 @@ const Works: React.FC<Props> = () => {
           <div className="exhibition-right-icon" />
         </div>
       </div>
-      <div className="main-card works" style={{ left: left[1] }}>
+      <div className="main-card works" style={{ left: isExhibition[1] }}>
         <div className="works-main">
           {worksList.map((item, index) => (
             <div
