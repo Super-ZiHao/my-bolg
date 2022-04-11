@@ -51,5 +51,6 @@
   "devDependencies": {
     "@craco/craco": "^6.4.3",
     "node-sass": "^7.0.1"
-  }
+  },
+  "homepage": "."
 }

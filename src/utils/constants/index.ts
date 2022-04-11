@@ -64,5 +64,29 @@ export const worksList: worksType[] = [
   },
   {
     path: ''
+  },
+  {
+    path: ''
+  },
+  {
+    path: ''
+  },
+  {
+    path: ''
+  },
+  {
+    path: ''
+  },
+  {
+    path: ''
+  },
+  {
+    path: ''
+  },
+  {
+    path: ''
+  },
+  {
+    path: ''
   }
 ]
