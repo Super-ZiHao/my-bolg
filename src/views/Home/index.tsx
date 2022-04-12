@@ -1,23 +1,20 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { ThunderboltOutlined, FolderOpenOutlined } from '@ant-design/icons'
 import { titleList, menuList } from '@/utils/constants'
-import { printPDF } from '@/utils/function'
-
+// import { printPDF } from '@/utils/function'
 type Props = {
 
 }
 const Home: React.FC<Props> = () => {
   const navigate = useNavigate()
-  const [nowTitle, setNowTitle] = useState<string>(titleList[0])
-  const nowTitleRef = useRef<HTMLSpanElement>(null)
+  const [nowTitleIndex, setNowTitleIndex] = useState<number>(-1)
   useEffect(() => {
-    // setTimeout(() => {
-    //   ;(nowTitleRef.current as HTMLSpanElement).style.width = `${(nowTitleRef.current as HTMLSpanElement)?.offsetWidth - 100}px`
-    // }, 1000)
-  }, [nowTitle])
-
-  const getNowText = () => {}
+    setTimeout(() => {
+      if (nowTitleIndex + 1 >= titleList.length) return setNowTitleIndex(0);
+      setNowTitleIndex(nowTitleIndex + 1)
+    }, 800);
+  }, [nowTitleIndex])
 
   const goContact = () => {
     navigate(`/${menuList.find((item) => item.title === '联系')?.path as string}`)
@@ -30,13 +27,13 @@ const Home: React.FC<Props> = () => {
       <div className="home-card">
         <div className="home-hello fs-20 color-white">HELLO!</div>
         <div className="home-title flex items-center fs-44 color-white mt-16 no-wrap">
-          <span>我是 ——</span>
-          <span className="ml-12 fw-bold color-01 inline-block overflow-hidden transition-30" ref={nowTitleRef}>
-            {nowTitle}
+          <span>我是 —— </span>
+          <span className="ml-12 fw-bold color-01 inline-block overflow-hidden transition-30">
+            {titleList[nowTitleIndex]}
           </span>
         </div>
         <div className="home-profile">
-          巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
+          开始造轮子咯
         </div>
         <div className="home-button">
           <div className="home-button-item" onClick={goContact}>
@@ -47,10 +44,10 @@ const Home: React.FC<Props> = () => {
             <FolderOpenOutlined />
             <div className="ml-18">作品集</div>
           </div>
-          <div className="home-button-item ml-24" onClick={printPDF}>
+          {/* <div className="home-button-item ml-24" onClick={printPDF}>
             <FolderOpenOutlined />
             <div className="ml-18">打印</div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ import React from 'react'
 const icons: { [t: string]: React.ReactNode } = {
   home: <HomeOutlined />,
   works: <CarryOutOutlined />,
-  demo: <AlertOutlined />,
+  study: <AlertOutlined />,
   experiment: <ExperimentOutlined />,
   contact: <PhoneOutlined />
 }

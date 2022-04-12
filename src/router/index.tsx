@@ -26,7 +26,7 @@ const RouterElement = () => {
       ]
     },
     {
-      path: '/demo',
+      path: '/study',
       element: <Demo />
     }
   ])

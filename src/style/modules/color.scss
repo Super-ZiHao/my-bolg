@@ -1,5 +1,6 @@
 $colors: (
-  '01': #d7a512
+  '01': #d7a512,
+  '02': #96ceb4
 );
 
 @each $key, $value in $colors {

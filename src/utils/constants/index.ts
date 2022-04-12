@@ -1,4 +1,4 @@
-export const titleList: string[] = ['zihao~~', '一位', '在任何时候', '都不会停止', '提升自我', '加强学习', '的', '程序猿']
+export const titleList: string[] = ['zihao~~', '一个', '正在坚持', '学习', '提升', '的', '程序猿']
 
 /**
  *==========================================================================
@@ -23,8 +23,8 @@ export const menuList: menuListType[] = [
   },
   {
     id: 2,
-    title: '有趣的demo',
-    path: 'demo'
+    title: '学习',
+    path: 'study'
   },
   {
     id: 3,
@@ -45,48 +45,11 @@ export const menuList: menuListType[] = [
  */
 interface worksType {
   path: string
+  title?: string
 }
 export const worksList: worksType[] = [
   {
-    path: 'battery'
+    path: 'battery',
+    title: '文字充电特效'
   },
-  {
-    path: 'test'
-  },
-  {
-    path: ''
-  },
-  {
-    path: ''
-  },
-  {
-    path: ''
-  },
-  {
-    path: ''
-  },
-  {
-    path: ''
-  },
-  {
-    path: ''
-  },
-  {
-    path: ''
-  },
-  {
-    path: ''
-  },
-  {
-    path: ''
-  },
-  {
-    path: ''
-  },
-  {
-    path: ''
-  },
-  {
-    path: ''
-  }
 ]

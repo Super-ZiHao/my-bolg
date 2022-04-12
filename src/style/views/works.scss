@@ -1,14 +1,48 @@
 .works {
   transform: translateX(100vw);
-  animation: X 1s ease forwards;
+  animation: X .5s ease forwards;
+}
+.works-main {
+  display: flex;
+  align-items: center;
+  transform: all .3s ease;
+}
+// 关闭详情按钮
+.unopen {
+  width: 40px;
+  height: 120px;
+  border-radius: 20px;
+  background: url('../../images/icon-rightBack.png') center center/40px 80px no-repeat;
+  background-color: rgba($color: #000000, $alpha: 0.1);
+  cursor: pointer;
+  transition: all .3s linear;
+  transform: rotate(180deg);
+  &:hover {
+    background-color: $color-1;
+  }
 }
 .works-option {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 1300px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: 1600px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  @media (min-width: 1980px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
   grid-auto-rows: 300px;
   gap: 20px;
   height: 100%;
-  padding: 16px;
+  padding: 8px;
   overflow-x: hidden;
   overflow-y: auto;
   transition: all 0.3s ease;
@@ -17,19 +51,15 @@
     align-items: center;
     justify-content: center;
     border-radius: 16px;
-    background-color: #fff;
+    background-color: #0d3f67;
     cursor: pointer;
-    transform: translateX(100vw);
     transition: all 0.5s ease;
-    &.open {
-      background-color: black;
+    &.selected {
+      background-color: #1f6ed4;
     }
-  }
-}
-
-@media screen and (min-width: 1980px) {
-  .works-option {
-    grid-template-columns: repeat(5, 1fr);
+    &:hover {
+      background-color: #1f6ed4;
+    }
   }
 }
 
@@ -48,7 +78,7 @@
 }
 .battery-text {
   width: 400px;
-  background-image: linear-gradient(#000 calc(100% - (var(--battery) * 100%)), #348cff calc(100% - (var(--battery) * 100%)));
+  background-image: linear-gradient(#000 calc(100% - (var(--battery) * 100%)), pink calc(100% - (var(--battery) * 100%)));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
