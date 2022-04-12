@@ -28,9 +28,9 @@ const Battery: React.FC<Props> = () => {
       <div ref={batteryRef} className="battery-text text-center">
         About text charging effect
       </div>
-      <div>
+      <div className='mt-32'>
         <Button type="primary" onClick={Full}>充电</Button>
-        <Button type="primary" className='ml-32' onClick={unFull}>放电</Button>
+        <Button type="primary" className='ml-32' onClick={unFull}>取消</Button>
       </div>
     </div>
   )

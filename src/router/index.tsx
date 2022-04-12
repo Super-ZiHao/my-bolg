@@ -1,9 +1,10 @@
 import { useRoutes, Navigate } from 'react-router-dom'
+import { worksList } from '@/utils/constants'
 
 import Home from '@/views/Home'
 import Works from '@/views/Works'
 import Demo from '@/views/Demo'
-import Battery from '@/views/Works/Battery'
+import Everyday from '@/views/Everyday'
 
 const RouterElement = () => {
   const element = useRoutes([
@@ -18,16 +19,15 @@ const RouterElement = () => {
     {
       path: '/works',
       element: <Works />,
-      children: [
-        {
-          path: 'battery',
-          element: <Battery />
-        },
-      ]
+      children: worksList
     },
     {
       path: '/study',
       element: <Demo />
+    },
+    {
+      path: '/everyday',
+      element: <Everyday />
     }
   ])
   return element

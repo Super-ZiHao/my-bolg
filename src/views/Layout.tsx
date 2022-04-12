@@ -8,7 +8,7 @@ const icons: { [t: string]: React.ReactNode } = {
   home: <HomeOutlined />,
   works: <CarryOutOutlined />,
   study: <AlertOutlined />,
-  experiment: <ExperimentOutlined />,
+  everyday: <ExperimentOutlined />,
   contact: <PhoneOutlined />
 }
 

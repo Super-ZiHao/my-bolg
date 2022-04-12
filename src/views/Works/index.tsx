@@ -6,6 +6,7 @@ import { worksList } from '@/utils/constants'
 type Props = {}
 const Works: React.FC<Props> = () => {
   const navigate = useNavigate()
+  const [nowUrlIndex, setNowUrlIndex] = useState<number>(-1)
   // 是否打开详情
   const [isSelected, setIsSelected] = useState<boolean>(false)
   const [selected, setSelected] = useState<number>(-1)
@@ -31,6 +32,7 @@ const Works: React.FC<Props> = () => {
     setSelected(index)
     setIsSelected(true)
     navigate(path)
+    setNowUrlIndex(index)
   }
   const clearSelected = () => {
     setSelected(-1)
@@ -48,10 +50,20 @@ const Works: React.FC<Props> = () => {
       width: '100%'
     }
   }
+  // 跳转至源码
+  const goCode = () => {
+    if (!worksList[nowUrlIndex].codeUrl) return
+    window.open(worksList[nowUrlIndex].codeUrl)
+  }
   return (
     <div className="flex w-full h-full relative">
       <div className="main-card flex justify-between works">
         <div className="works-main overflow-hidden" style={{ width: isSelected ? 'calc(100% - 280px)' : '0%' }}>
+          {worksList[nowUrlIndex]?.codeUrl && (
+            <div className="get-code" onClick={goCode}>
+              查看源码
+            </div>
+          )}
           <Outlet />
           <div className="unopen" onClick={clearSelected}></div>
         </div>
