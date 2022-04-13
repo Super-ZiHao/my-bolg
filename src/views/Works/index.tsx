@@ -1,6 +1,6 @@
-import React, { CSSProperties, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
-import { Drawer, Empty, Tooltip } from 'antd'
+import { Modal, Empty, Tooltip } from 'antd'
 import { worksDivList, worksList } from '@/utils/constants'
 
 type Props = {}
@@ -44,10 +44,9 @@ const Works: React.FC<Props> = () => {
   return (
     <div className="flex w-full h-full relative">
       <div className="main-card flex justify-between works">
-        <Drawer
-          placement="top"
-          size="large"
-          onClose={() => setVisible(false)}
+        <Modal
+          footer={null}
+          onCancel={() => setVisible(false)}
           visible={visible}
         >
           <div className="works-main overflow-hidden">
@@ -58,14 +57,14 @@ const Works: React.FC<Props> = () => {
             )}
             <Outlet />
           </div>
-        </Drawer>
-        <div className='w-full h-full overflow-auto'>
-          <div className='ml-16 flex column'>
-            <h1 className='color-white'>一些有趣的样式</h1>
-            <div className="ml-8 works-option">
+        </Modal>
+        <div className='flex column w-full h-full overflow-auto'>
+          <div className='mt-16 mb-16 ml-16 flex column'>
+            <h1 className='works-title ff-kt'>一些有趣的样式</h1>
+            <div className="ml-8 works-option" style={{ gridAutoRows: '150px' }}>
               {worksList.map((item, index) => (
                 <div
-                  className={`works-option-item cp hover ${index === selected ? 'selected' : ''}`}
+                  className={`works-option-item cp significant ${index === selected ? 'selected' : ''}`}
                   key={item.title}
                   onClick={() => openSelected(item.path, index)}
                 >
@@ -74,8 +73,8 @@ const Works: React.FC<Props> = () => {
               ))}
             </div>
           </div>
-          <div className='mt-32 ml-16 flex column'>
-            <h1 className='color-white'>单标签特效集</h1>
+          <div className='mt-16 ml-16 flex column'>
+            <h1 className='works-title ff-kt'>单标签特效集</h1>
             <div className="ml-8 works-option">
               {worksDivList.map((item) => (
                 <Tooltip
@@ -83,7 +82,7 @@ const Works: React.FC<Props> = () => {
                   title={item.title}
                   key={item.title}
                 >
-                  <div className='works-option-item' >
+                  <div className='works-option-item single' >
                     {item.element}
                   </div>
                 </Tooltip>

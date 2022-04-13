@@ -1,0 +1,14 @@
+.everyday-main {
+  background-color: transparent;
+  border: none;
+}
+.everyday-item {
+  background-color: #fff;
+  border-radius: 20px !important;
+  .ant-collapse-content{
+    border-radius:0 0 20px 20px !important;
+  }
+  & + .everyday-item {
+    margin-top: 8px;
+  }
+}
