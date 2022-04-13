@@ -1,18 +1,16 @@
-import { Collapse } from "antd"
+import { everyDayList } from '@/utils/constants/everyDay'
+import { Collapse } from 'antd'
 
-type Props = {
-
-}
+type Props = {}
 const Everyday: React.FC<Props> = () => {
   const { Panel } = Collapse
+
   return (
     <div className="w-full h-full">
       <Collapse className="everyday-main">
-        {
-          Array.from({length: 20}).map((item, index) => (
-            <Panel className="everyday-item"  header="asd" key={index}>123</Panel>
-          ))
-        } 
+        {everyDayList.map((item, index) => (
+          <Panel className="everyday-item" header={item.title} key={item.id}>{ item.value }</Panel>
+        ))}
       </Collapse>
     </div>
   )

@@ -4,9 +4,9 @@
 }
 .everyday-item {
   background-color: #fff;
-  border-radius: 20px !important;
-  .ant-collapse-content{
-    border-radius:0 0 20px 20px !important;
+  border-radius: 15px !important;
+  .ant-collapse-content {
+    border-radius: 0 0 15px 15px !important;
   }
   & + .everyday-item {
     margin-top: 8px;
