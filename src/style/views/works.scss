@@ -3,44 +3,27 @@
   animation: X 0.5s ease forwards;
 }
 .works-main {
-  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  height: 100%;
   transition: all 0.3s ease;
-}
-// 关闭详情按钮
-.unopen {
-  width: 40px;
-  height: 120px;
-  border-radius: 20px;
-  background: url('../../images/icon-rightBack.png') center center/40px 80px no-repeat;
-  background-color: rgba($color: #000000, $alpha: 0.2);
-  cursor: pointer;
-  transform: rotate(180deg);
-  transition: all 0.1s linear;
-  &:hover {
-    background-color: $color-1;
-  }
 }
 // 查看源码
 .get-code {
-  position: absolute;
-  top: 10px;
-  left: 50%;
   @include flex();
   border-radius: 25px;
   width: 200px;
   height: 50px;
-  color: #1a74e5;
+  color: #0d3f67;
   font-size: 24px;
-  background-color: rgba($color: #000000, $alpha: 0.2);
+  background-color: #d7a512;
   cursor: pointer;
-  transform: translateX(-50%);
   transition: all 0.1s linear;
   &:hover {
-    color: #0d3f67;
-    background-color: $color-1;
+    color: #d7a512;
+    background-color: #1f6ed4;
   }
 }
 .works-option {
@@ -67,20 +50,18 @@
   padding: 8px;
   overflow-x: hidden;
   overflow-y: auto;
-  transition: all 0.3s ease;
   .works-option-item {
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 16px;
+    color: #96ceb4;
     background-color: #0d3f67;
-    cursor: pointer;
     transition: all 0.5s ease;
-    &.selected {
+    overflow: hidden;
+    &.hover:hover {
       background-color: #1f6ed4;
-    }
-    &:hover {
-      background-color: #1f6ed4;
+      color: #d7a512;
     }
   }
 }
@@ -120,15 +101,9 @@
   width: 200px;
   border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
   background: #318cfe;
-  box-shadow: 
-    -10px 15px 8px #1b6cfb,
-    -20px 30px 32px #1b6cfb,
-    inset -6px 6px 10px #1b6cfb,
-    inset 2px 6px 10px #1a74e5,
-    inset 20px -20px 22px white,
-    inset 40px -40px 44px #a8ceff;
+  box-shadow: -10px 15px 8px #1b6cfb, -20px 30px 32px #1b6cfb, inset -6px 6px 10px #1b6cfb, inset 2px 6px 10px #1a74e5,
+    inset 20px -20px 22px white, inset 40px -40px 44px #a8ceff;
   opacity: 0.8;
-  transform: scale(1.5);
 }
 .drop::after {
   content: '';
@@ -165,7 +140,7 @@
   }
   &::after {
     bottom: 150px;
-    opacity: .6;
+    opacity: 0.6;
     border-radius: 45%;
     background-color: #54abfb;
     transform: rotate(45deg) translate(-50%, -50%);
@@ -173,18 +148,18 @@
   &::before {
     bottom: 165px;
     border-radius: 47%;
-    background-color: #0d3f67;
+    background-color: green ;
     transform: rotate(50deg) translate(-50%, -50%);
   }
 }
 @keyframes 旋转 {
   0% {
-      transform: translate(-50%, 0) rotateZ(0deg);
+    transform: translate(-50%, 0) rotateZ(0deg);
   }
   50% {
-      transform: translate(-50%, -2%) rotateZ(180deg);
+    transform: translate(-50%, -2%) rotateZ(180deg);
   }
   100% {
-      transform: translate(-50%, 0%) rotateZ(360deg);
+    transform: translate(-50%, 0%) rotateZ(360deg);
   }
 }

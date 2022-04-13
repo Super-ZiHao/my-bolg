@@ -1,9 +1,10 @@
 import Battery from '@/views/Works/Battery'
 import Drop from '@/views/Works/Drop'
 import Ripple from '@/views/Works/Ripple'
+import React from 'react'
 import { RouteObject } from 'react-router'
 
-export const titleList: string[] = ['zihao~~', '一个', '坚持学习', '努力提升自我', '的程序猿', '欢迎大佬前来指正不足']
+export const titleList: string[] = ['zihao~~', '一个', '坚持学习', '努力提升自我', '的程序猿', '欢迎', '各位大佬查看', '我的博客']
 
 /**
  *==========================================================================
@@ -35,7 +36,7 @@ export const menuList: menuListType[] = [
     id: 3,
     title: '每日一问',
     path: 'everyday'
-  },
+  }
   // {
   //   id: 4,
   //   title: '联系',
@@ -58,15 +59,20 @@ export const worksList: worksType[] = [
     path: 'battery',
     element: <Battery />,
     title: '文字充电效果',
-    codeUrl: 'https://codepen.io/huangzihao3344/pen/YzYjOgQ',
-  },
+    codeUrl: 'https://codepen.io/huangzihao3344/pen/YzYjOgQ'
+  }
+]
+
+interface worksDivListType {
+  element: React.ReactNode,
+  title: string
+}
+export const worksDivList: worksDivListType[] = [
   {
-    path: 'drop',
     element: <Drop />,
-    title: '水珠',
+    title: '水珠'
   },
   {
-    path: 'ripple',
     element: <Ripple />,
     title: '波浪'
   }

@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { CSSProperties, useEffect, useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
-import { Empty } from 'antd'
-import { worksList } from '@/utils/constants'
+import { Drawer, Empty, Tooltip } from 'antd'
+import { worksDivList, worksList } from '@/utils/constants'
 
 type Props = {}
 const Works: React.FC<Props> = () => {
   const navigate = useNavigate()
+  // 是否打开抽屉
+  const [visible, setVisible] = useState<boolean>(false);
   const [nowUrlIndex, setNowUrlIndex] = useState<number>(-1)
-  // 是否打开详情
-  const [isSelected, setIsSelected] = useState<boolean>(false)
+  // 目前选中的 index
   const [selected, setSelected] = useState<number>(-1)
   // 卡片划入动画是否结束
   const [isAnimation, setIsAnimation] = useState<boolean>(true)
@@ -30,26 +31,11 @@ const Works: React.FC<Props> = () => {
 
   const openSelected = (path: string, index: number) => {
     setSelected(index)
-    setIsSelected(true)
     navigate(path)
     setNowUrlIndex(index)
+    setVisible(true)
   }
-  const clearSelected = () => {
-    setSelected(-1)
-    setIsSelected(false)
-  }
-  const getOptionStyle = () => {
-    if (isSelected) {
-      return {
-        width: '300px',
-        gridTemplateColumns: '1fr',
-        gridAutoRows: '150px'
-      }
-    }
-    return {
-      width: '100%'
-    }
-  }
+
   // 跳转至源码
   const goCode = () => {
     if (!worksList[nowUrlIndex].codeUrl) return
@@ -58,26 +44,52 @@ const Works: React.FC<Props> = () => {
   return (
     <div className="flex w-full h-full relative">
       <div className="main-card flex justify-between works">
-        <div className="works-main overflow-hidden" style={{ width: isSelected ? 'calc(100% - 280px)' : '0%' }}>
-          {worksList[nowUrlIndex]?.codeUrl && (
-            <div className="get-code" onClick={goCode}>
-              查看源码
+        <Drawer
+          placement="top"
+          size="large"
+          onClose={() => setVisible(false)}
+          visible={visible}
+        >
+          <div className="works-main overflow-hidden">
+            {worksList[nowUrlIndex]?.codeUrl && (
+              <div className="get-code" onClick={goCode}>
+                查看源码
+              </div>
+            )}
+            <Outlet />
+          </div>
+        </Drawer>
+        <div className='w-full h-full overflow-auto'>
+          <div className='ml-16 flex column'>
+            <h1 className='color-white'>一些有趣的样式</h1>
+            <div className="ml-8 works-option">
+              {worksList.map((item, index) => (
+                <div
+                  className={`works-option-item cp hover ${index === selected ? 'selected' : ''}`}
+                  key={item.title}
+                  onClick={() => openSelected(item.path, index)}
+                >
+                  {item.title ? <div className="ff-kt fs-44 text-center lh-56">{item.title}</div> : <Empty />}
+                </div>
+              ))}
             </div>
-          )}
-          <Outlet />
-          <div className="unopen" onClick={clearSelected}></div>
-        </div>
-        <div className="works-option" style={getOptionStyle()}>
-          {worksList.map((item, index) => (
-            <div
-              className={`works-option-item ${index === selected ? 'selected' : ''}`}
-              key={index}
-              style={{ animation: animationNumber === index ? '跳动 .3s linear' : '' }}
-              onClick={() => openSelected(item.path, index)}
-            >
-              {item.title ? <div className="ff-kt fs-44 color-02 text-center lh-56">{item.title}</div> : <Empty />}
+          </div>
+          <div className='mt-32 ml-16 flex column'>
+            <h1 className='color-white'>单标签特效集</h1>
+            <div className="ml-8 works-option">
+              {worksDivList.map((item) => (
+                <Tooltip
+                  color="blue"
+                  title={item.title}
+                  key={item.title}
+                >
+                  <div className='works-option-item' >
+                    {item.element}
+                  </div>
+                </Tooltip>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>

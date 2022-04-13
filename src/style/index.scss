@@ -1,3 +1,5 @@
 @import './extends';
 // antd 样式
 @import 'antd/dist/antd.css';
+// 强制修改 antd 样式
+@import './resetAntd.scss'

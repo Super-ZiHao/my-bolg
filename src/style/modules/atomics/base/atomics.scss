@@ -22,6 +22,9 @@
 %overflow-hidden {
   overflow: hidden;
 }
+%overflow-auto {
+  overflow: auto;
+}
 /**
 *========================================================================== 
  * 关于 ———— 盒模型
@@ -61,10 +64,10 @@
 %h-full {
   height: 100%;
 }
-%vw-full{
+%vw-full {
   width: 100vw;
 }
-%vh-full{
+%vh-full {
   height: 100vh;
 }
 
