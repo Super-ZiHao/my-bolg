@@ -1,14 +1,42 @@
-.everyday-main {
-  background-color: transparent;
-  border: none;
+.everyday {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(300px, 50%);
+  gap: 30px;
+  border-radius: 15px;
+  @media screen and (max-width: 1600px) {
+    grid-template-columns: 1fr;
+    .everyday-title {
+      text-align: center;
+    }
+  }
+}
+.everyday-title {
+  height: 40px;
+  color: #d7a512;
 }
 .everyday-item {
-  background-color: #fff;
-  border-radius: 15px !important;
-  .ant-collapse-content {
-    border-radius: 0 0 15px 15px !important;
-  }
-  & + .everyday-item {
-    margin-top: 8px;
+  border-radius: 16px;
+  padding: 8px;
+  background-color: rgba($color: white, $alpha: 0.5);
+}
+.everyday-main {
+  border: none;
+  background-color: transparent;
+  padding: 0 16px;
+  .item {
+    border: none;
+    background-color: peru;
+    border-radius: 15px !important;
+    // .ant-collapse-header {
+    // }
+    .ant-collapse-content {
+      border-top: 1px solid sandybrown;
+      background-color: rgb(219, 157, 95);
+      border-radius: 0 0 15px 15px !important;
+    }
+    & + .item {
+      margin-top: 8px;
+    }
   }
 }

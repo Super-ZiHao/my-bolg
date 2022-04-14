@@ -60,7 +60,7 @@ const Works: React.FC<Props> = () => {
         </Modal>
         <div className='flex column w-full h-full overflow-auto'>
           <div className='mt-16 mb-16 ml-16 flex column'>
-            <h1 className='works-title ff-kt'>一些有趣的样式</h1>
+            <h1 className='works-title convex-text ff-kt'>一些有趣的样式</h1>
             <div className="ml-8 works-option" style={{ gridAutoRows: '150px' }}>
               {worksList.map((item, index) => (
                 <div
@@ -74,7 +74,7 @@ const Works: React.FC<Props> = () => {
             </div>
           </div>
           <div className='mt-16 ml-16 flex column'>
-            <h1 className='works-title ff-kt'>单标签特效集</h1>
+            <h1 className='works-title convex-text ff-kt'>单标签特效集</h1>
             <div className="ml-8 works-option">
               {worksDivList.map((item) => (
                 <Tooltip

@@ -71,15 +71,11 @@
         transform: translateY(-5px);
       }
     }
-    &.single {
-
-    }
   }
 }
 .works-title {
   font-size: 28px;
   color: #d7a512;
-  text-shadow: 1px 1px 1px black, -1px -1px 1px white;
   text-align: center;
   @media (min-width: 800px) {
     text-align: left;

@@ -209,3 +209,9 @@ $transitionTime: (10, 20, 30);
     transition: all ease #{$time / 100}s;
   }
 }
+
+
+// 凸文字
+.convex-text {
+  text-shadow: 1px 1px 1px black, -1px -1px 1px white;
+}
