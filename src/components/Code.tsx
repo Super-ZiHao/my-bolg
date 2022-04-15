@@ -1,3 +1,5 @@
+import { Style } from 'util'
+
 interface LabelProps {
   title: string
   type?: string
@@ -22,7 +24,23 @@ const Label: React.FC<LabelProps> = ({ title, type = 'double', children }) => {
 
 interface TextProps {}
 const Text: React.FC<TextProps> = ({ children }) => {
-  return <div className="flex items-center pl-12" style={{ borderLeft: '2px solid #606871' }}>{children}</div>
+  return (
+    <div className="flex items-center pl-12 pt-4 pb-4" style={{ borderLeft: '2px solid #606871', backgroundColor: 'rgba(0, 0, 0, .1' }}>
+      {children}
+    </div>
+  )
+}
+
+interface StyleSelectProps {
+  selected: string
+  data: any
+}
+const StyleSelect: React.FC<StyleSelectProps> = ({ selected, data }) => {
+  const keys = Object.keys(data)
+  return (
+    <pre>{`${selected}{
+}`}</pre>
+  )
 }
 
 interface Props {
@@ -31,6 +49,7 @@ interface Props {
 interface CodeAttribute {
   Label: React.FC<LabelProps>
   Text: React.FC<TextProps>
+  StyleSelect: React.FC<StyleSelectProps>
 }
 const Code: React.FC<Props> & CodeAttribute = ({ className, children }) => {
   return (
@@ -42,5 +61,6 @@ const Code: React.FC<Props> & CodeAttribute = ({ className, children }) => {
 
 Code.Label = Label
 Code.Text = Text
+Code.StyleSelect = StyleSelect
 
 export default Code
