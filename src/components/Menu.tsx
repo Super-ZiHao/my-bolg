@@ -26,14 +26,17 @@ const MenuItem: React.FC<MenuItemProps> = ({ children, className, icon, height =
   )
 }
 
-type MenuProps = {
-  className?: string
-}
-interface ReactFC<T> extends React.FC<T> {
+interface MenuAttribute {
+  /**
+   * 每一个选项
+   */
   Item: React.FC<MenuItemProps>
 }
+interface Props {
+  className?: string
+}
 
-export const Menu: ReactFC<MenuProps> = ({ className, children }) => {
+const Menu: MenuAttribute & React.FC<Props> = ({ className, children }) => {
   return <div className={`${className} ZH-menu`}>{children}</div>
 }
 

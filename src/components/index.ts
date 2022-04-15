@@ -1,1 +1,0 @@
-export const Menu = require('./Menu.tsx').Menu

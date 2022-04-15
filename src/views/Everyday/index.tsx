@@ -12,7 +12,7 @@ const Everyday: React.FC<Props> = () => {
           <h1 className="everyday-title convex-text ff-kt ml-8">CSS</h1>
           <Collapse className="everyday-main" accordion>
             {everyDayCSSList.map((item, index) => (
-              <Panel className="item" header={item.title} key={item.id}>
+              <Panel className="item" header={item.title} key={item.id}>    
                 {item.value}
               </Panel>
             ))}
@@ -21,23 +21,6 @@ const Everyday: React.FC<Props> = () => {
       </div>
       <div className="everyday-item">
         <h1 className="everyday-title convex-text ff-kt ml-8">JavaScript</h1>
-        {everyDayJSList.length > 0 ? (
-          <Collapse className="everyday-main" accordion>
-            {everyDayJSList.map((item, index) => (
-              <Panel className="item" header={item.title} key={item.id}>
-                {item.value}
-              </Panel>
-            ))}
-          </Collapse>
-        ) : (
-          <Empty
-            className="flex column items-center justify-center"
-            style={{ backgroundColor: 'transparent', border: 'none', height: '75%' }}
-          />
-        )}
-      </div>
-      <div className="everyday-item">
-        <h1 className="everyday-title convex-text ff-kt ml-8">其他</h1>
         {everyDayJSList.length > 0 ? (
           <Collapse className="everyday-main" accordion>
             {everyDayJSList.map((item, index) => (

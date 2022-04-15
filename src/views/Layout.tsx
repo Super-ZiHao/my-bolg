@@ -1,5 +1,5 @@
 import RouterElement from '@/router'
-import { Menu } from '@/components'
+import Menu from '@/components/Menu'
 import { menuList } from '@/utils/constants'
 import { AlertOutlined, CarryOutOutlined, HomeOutlined, ExperimentOutlined, PhoneOutlined } from '@ant-design/icons'
 import React from 'react'
