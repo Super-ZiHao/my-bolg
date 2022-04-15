@@ -1,7 +1,7 @@
 import Code from '@/components/Code'
 import { ReactNode } from 'react'
 
-const { Label, Text, StyleSelect } = Code
+const { Label, Text, Remarks } = Code
 
 interface TitleProps {
   title: string
@@ -16,7 +16,7 @@ const Title: React.FC<TitleProps> = ({ title, date }) => {
   )
 }
 
-type everyDayListType = {
+export type everyDayListType = {
   id: number
   title: string | ReactNode
   value: string | ReactNode
@@ -27,19 +27,8 @@ export const everyDayCSSList: everyDayListType[] = [
     title: <Title title="简单的说一下:root" date="2022 - 04 - 08" />,
     value: (
       <>
-        <Text>相当于是 HTML，但是权级比html要高</Text>
-        <Code className="mt-8">
-          {/* <pre>
-            {`:root{
- background: red;
-}`}
-          </pre> */}
-          <StyleSelect selected=':root' data={{
-            background: 'red',
-            red: 'asd'
-          }} />
-          <div>html{' {  }'}</div>
-        </Code>
+        <Text>:root 相当于是 HTML，但是权级比html要高</Text>
+        <Code className="mt-8"></Code>
       </>
     )
   },

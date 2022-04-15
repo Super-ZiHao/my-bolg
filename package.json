@@ -11,7 +11,6 @@
     "@types/node": "^16.11.26",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
-    "animate.css": "^4.1.1",
     "antd": "^4.19.4",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
