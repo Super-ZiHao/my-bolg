@@ -43,7 +43,7 @@ const Works: React.FC<Props> = () => {
   }
   return (
     <div className="flex w-full h-full relative">
-      <div className="main-card flex justify-between works">
+      <div className="card flex justify-between works">
         <Modal
           footer={null}
           onCancel={() => setVisible(false)}
