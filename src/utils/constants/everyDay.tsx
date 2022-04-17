@@ -1,4 +1,6 @@
+import CodeTitle from '@/components/CodeTitle'
 import { ReactNode } from 'react'
+import Highlight from 'react-highlight'
 
 interface TitleProps {
   title: string
@@ -18,18 +20,32 @@ export type everyDayListType = {
   title: string | ReactNode
   value: string | ReactNode
 }
+
 export const everyDayCSSList: everyDayListType[] = [
   {
     id: 1,
     title: <Title title="简单的说一下:root" date="2022 - 04 - 08" />,
-    value: ''
+    value: (
+      <>
+        <CodeTitle>:root 相当于 html，但是权级要比 html 高</CodeTitle>
+        <Highlight className="css">{`:root {
+  color: red; /* :root 优先级更高，生效 */
+}
+html {
+  color: pink; /* html 被 :root 覆盖 */
+}`}</Highlight>
+      </>
+    )
   },
   {
     id: 2,
     title: (
-      <Title title="我们经常看到 a 的 margin-bottom 和 b 的 margin-top 的值重叠了。什么原因造成的？如何解决？" date="2022 - 04 - 11" />
+      <Title title="我们经常看到 a 的 margin-bottom 和 b 的 margin-top 的值重叠了。如何解决？" date="2022 - 04 - 11" />
     ),
-    value: ''
+    value: (
+      <Highlight className='css'>{`
+      `}</Highlight>
+    )
   },
   {
     id: 3,
@@ -39,7 +55,21 @@ export const everyDayCSSList: everyDayListType[] = [
   {
     id: 4,
     title: <Title title="从一个没有滚动条的页面切换到一个有滚动条的页面会发生抖动？" date="2022 - 04 - 13" />,
-    value: ''
+    value: (
+      <>
+        <CodeTitle>原因 : 因为滚动条占有一部分宽度，从没有到出现就会造成此现象</CodeTitle>
+        <Highlight className="css">{`/*  解决方式  */
+  /* 1、浏览器一直显示滚动条 —— 不美观 */
+  body { overflow: scroll }
+  /* 2、滚动条宽度不参与计算 —— 属性不兼容 火狐 IE */
+  body { overflow: overlay }
+  /* 3、滚动条宽度设为 0 —— 属性不兼容 火狐 IE */
+  ::-webkit-scrollbar{ width: 0px }
+  /* 4、计算出滚动条的宽度，并特殊处理 */
+  body { margin-left: calc(100vw - 100%) } /* 或 */ body { padding-left: calc(100vw - 100%) }
+`}</Highlight>
+      </>
+    )
   },
   {
     id: 5,

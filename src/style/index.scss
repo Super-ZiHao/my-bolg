@@ -2,4 +2,9 @@
 // antd 样式
 @import 'antd/dist/antd.css';
 // 强制修改 antd 样式
-@import './resetAntd.scss'
+@import './resetAntd.scss';
+// 高亮代码
+@import 'highlight.js/styles/zenburn.css';
+html {
+  color: #b0b0b0
+}
