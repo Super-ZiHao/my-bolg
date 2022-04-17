@@ -9,7 +9,7 @@ type Props = {
 const EveryDayItem: React.FC<Props> = ({ dataList, title }) => {
   const { Panel } = Collapse
   return (
-    <div className="everyday-item card">
+    <div className="everyday-item card animate__animated animate__fadeInRight">
       <div className='h-full' style={{ overflow: 'overlay' }}>
         <h1 className="everyday-title convex-text ff-kt ml-8">{ title }</h1>
         {dataList.length > 0 ? (

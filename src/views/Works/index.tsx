@@ -42,52 +42,50 @@ const Works: React.FC<Props> = () => {
     window.open(worksList[nowUrlIndex].codeUrl)
   }
   return (
-    <div className="flex w-full h-full relative">
-      <div className="card flex justify-between works">
-        <Modal
-          footer={null}
-          onCancel={() => setVisible(false)}
-          visible={visible}
-        >
-          <div className="works-main overflow-hidden">
-            {worksList[nowUrlIndex]?.codeUrl && (
-              <div className="get-code" onClick={goCode}>
-                查看源码
+    <div className="card flex justify-between works animate__animated animate__fadeInRight">
+      <Modal
+        footer={null}
+        onCancel={() => setVisible(false)}
+        visible={visible}
+      >
+        <div className="works-main overflow-hidden">
+          {worksList[nowUrlIndex]?.codeUrl && (
+            <div className="get-code" onClick={goCode}>
+              查看源码
+            </div>
+          )}
+          <Outlet />
+        </div>
+      </Modal>
+      <div className='flex column w-full h-full overflow-auto'>
+        <div className='mt-16 mb-16 ml-16 flex column'>
+          <h1 className='works-title convex-text ff-kt'>一些有趣的样式</h1>
+          <div className="ml-8 works-option" style={{ gridAutoRows: '150px' }}>
+            {worksList.map((item, index) => (
+              <div
+                className={`works-option-item cp significant ${index === selected ? 'selected' : ''}`}
+                key={item.title}
+                onClick={() => openSelected(item.path, index)}
+              >
+                {item.title ? <div className="ff-kt fs-44 text-center lh-56">{item.title}</div> : <Empty />}
               </div>
-            )}
-            <Outlet />
+            ))}
           </div>
-        </Modal>
-        <div className='flex column w-full h-full overflow-auto'>
-          <div className='mt-16 mb-16 ml-16 flex column'>
-            <h1 className='works-title convex-text ff-kt'>一些有趣的样式</h1>
-            <div className="ml-8 works-option" style={{ gridAutoRows: '150px' }}>
-              {worksList.map((item, index) => (
-                <div
-                  className={`works-option-item cp significant ${index === selected ? 'selected' : ''}`}
-                  key={item.title}
-                  onClick={() => openSelected(item.path, index)}
-                >
-                  {item.title ? <div className="ff-kt fs-44 text-center lh-56">{item.title}</div> : <Empty />}
+        </div>
+        <div className='mt-16 ml-16 flex column'>
+          <h1 className='works-title convex-text ff-kt'>单标签特效集</h1>
+          <div className="ml-8 works-option">
+            {worksDivList.map((item) => (
+              <Tooltip
+                color="blue"
+                title={item.title}
+                key={item.title}
+              >
+                <div className='works-option-item single' >
+                  {item.element}
                 </div>
-              ))}
-            </div>
-          </div>
-          <div className='mt-16 ml-16 flex column'>
-            <h1 className='works-title convex-text ff-kt'>单标签特效集</h1>
-            <div className="ml-8 works-option">
-              {worksDivList.map((item) => (
-                <Tooltip
-                  color="blue"
-                  title={item.title}
-                  key={item.title}
-                >
-                  <div className='works-option-item single' >
-                    {item.element}
-                  </div>
-                </Tooltip>
-              ))}
-            </div>
+              </Tooltip>
+            ))}
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ type Props = {
 
 const Demo: React.FC<Props> = ({ children }) => {
   return (
-    <div className="card demo">
+    <div className="card demo animate__animated animate__fadeInRight">
     </div>
   )
 }

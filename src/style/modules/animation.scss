@@ -1,12 +1,3 @@
-@keyframes X {
-  from {
-    transform: translateX(100vw);
-  }
-  to {
-    transform: translateX(0vw);
-  }
-}
-
 @keyframes 跳动 {
   0% {
     transform-origin: bottom;
