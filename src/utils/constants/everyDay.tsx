@@ -43,21 +43,36 @@ html {
       <Title title="我们经常看到 a 的 margin-bottom 和 b 的 margin-top 的值重叠了。如何解决？" date="2022 - 04 - 11" />
     ),
     value: (
-      <Highlight className='css'>{`
-      `}</Highlight>
+      <>
+        <CodeTitle>块级元素的上边距与下边距有时候会合并为单哥外边距，这种现象称为 margin 合并</CodeTitle>
+        <Highlight className='css'>{`/* 解决方式 */
+  /* 1、浮动 */
+  /* 2、定位(absolute | fixed) */
+  /* 3、修改 dom 结构 */
+  例:
+    <div class="top" style="margin-bottom: 20px;"></div>
+    <div class="box">
+      <div class="bottom" style="margin-top: 20px;"></div>
+    </div>`}</Highlight>
+      </>
     )
   },
   {
     id: 3,
     title: <Title title="父子关系的 box 会产生BFC 吗？" date="2022 - 04 - 12" />,
-    value: ''
+    value: (
+      <>
+        <CodeTitle>会！</CodeTitle>
+        <Highlight className='css'>{``}</Highlight>
+      </>
+    )
   },
   {
     id: 4,
     title: <Title title="从一个没有滚动条的页面切换到一个有滚动条的页面会发生抖动？" date="2022 - 04 - 13" />,
     value: (
       <>
-        <CodeTitle>原因 : 因为滚动条占有一部分宽度，从没有到出现就会造成此现象</CodeTitle>
+        <CodeTitle>因为滚动条占有一部分宽度，从没有到出现就会造成此现象</CodeTitle>
         <Highlight className="css">{`/*  解决方式  */
   /* 1、浏览器一直显示滚动条 —— 不美观 */
   body { overflow: scroll }
