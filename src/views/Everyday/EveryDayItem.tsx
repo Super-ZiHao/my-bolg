@@ -13,12 +13,12 @@ type Props = {
 
 const EveryDayItem: React.FC<Props> = ({ dataList, title, style }) => {
   const FullScreenElementRef = useRef<HTMLDivElement>(null)
-  const { openFullScreen, isFullScreen, closeFullScreem } = useFullscreen(FullScreenElementRef)
+  const { isCompatible, isFullScreen, openFullScreen, closeFullScreem } = useFullscreen(FullScreenElementRef)
   const { Panel } = Collapse
   return (
     <div className="everyday-item card animate__animated animate__fadeInRight animate__delay-1s" ref={FullScreenElementRef} style={style}>
       <div className="h-full relative">
-        {isFullScreen ? (
+        {isCompatible && isFullScreen ? (
           <FullscreenExitOutlined onClick={closeFullScreem} className="absolute color-white fs-28 cp" style={{ right: '8px', top: '8px' }} />
         ) : (
           <FullscreenOutlined onClick={openFullScreen} className="absolute color-white fs-28 cp" style={{ right: '8px', top: '8px' }} />
