@@ -25,7 +25,8 @@
   z-index: 5;
   flex: 1;
   padding: 32px;
-  overflow: overlay;
+  overflow-y: overlay;
+  overflow-x: hidden;
 }
 
 // 卡片
