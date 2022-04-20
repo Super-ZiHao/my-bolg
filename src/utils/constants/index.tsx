@@ -36,12 +36,12 @@ export const menuList: menuListType[] = [
     id: 3,
     title: '每日一问',
     path: 'everyday'
+  },
+  {
+    id: 4,
+    title: '关于我',
+    path: 'about-me'
   }
-  // {
-  //   id: 4,
-  //   title: '联系',
-  //   path: 'contact'
-  // }
 ]
 
 /**

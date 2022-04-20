@@ -25,13 +25,13 @@
   .item {
     border: none;
     background-color: peru;
-    border-radius: 15px !important;
+    border-radius: 8px !important;
     // .ant-collapse-header {
     // }
     .ant-collapse-content {
       border-top: 1px solid sandybrown;
       background-color: rgb(219, 157, 95);
-      border-radius: 0 0 15px 15px !important;
+      border-radius: 0 0 8px 8px !important;
     }
     & + .item {
       margin-top: 8px;

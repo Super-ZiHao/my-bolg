@@ -9,7 +9,7 @@ const icons: { [t: string]: React.ReactNode } = {
   works: <CarryOutOutlined />,
   study: <ExperimentOutlined />,
   everyday: <AlertOutlined />,
-  contact: <PhoneOutlined />
+  'about-me': <PhoneOutlined />
 }
 
 const Layout = () => {
