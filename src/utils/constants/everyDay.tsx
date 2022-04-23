@@ -1,10 +1,10 @@
-import CodeTitle from '@/components/CodeTitle'
-import { ReactNode } from 'react'
-import Highlight from 'react-highlight'
+import CodeTitle from '@/components/CodeTitle';
+import { ReactNode } from 'react';
+import Highlight from '@/components/Highlight';
 
 interface TitleProps {
-  title: string
-  date: string
+  title: string;
+  date: string;
 }
 const Title: React.FC<TitleProps> = ({ title, date }) => {
   return (
@@ -12,14 +12,14 @@ const Title: React.FC<TitleProps> = ({ title, date }) => {
       <div>{title}</div>
       <div className="ml-32 no-wrap">{date}</div>
     </div>
-  )
-}
+  );
+};
 
 export type everyDayListType = {
-  id: number
-  title: string | ReactNode
-  value: string | ReactNode
-}
+  id: number;
+  title: string | ReactNode;
+  value: string | ReactNode;
+};
 
 export const everyDayCSSList: everyDayListType[] = [
   {
@@ -39,13 +39,11 @@ html {
   },
   {
     id: 2,
-    title: (
-      <Title title="我们经常看到 a 的 margin-bottom 和 b 的 margin-top 的值重叠了。如何解决？" date="2022 - 04 - 11" />
-    ),
+    title: <Title title="我们经常看到 a 的 margin-bottom 和 b 的 margin-top 的值重叠了。如何解决？" date="2022 - 04 - 11" />,
     value: (
       <>
         <CodeTitle>块级元素的上边距与下边距有时候会合并为单哥外边距，这种现象称为 margin 合并</CodeTitle>
-        <Highlight className='css'>{`/* 解决方式 */
+        <Highlight className="css">{`/* 解决方式 */
   /* 1、浮动 */
   /* 2、定位(absolute | fixed) */
   /* 3、修改 dom 结构 */
@@ -63,7 +61,7 @@ html {
     value: (
       <>
         <CodeTitle>会！</CodeTitle>
-        <Highlight className='css'>{``}</Highlight>
+        <Highlight className="css">{``}</Highlight>
       </>
     )
   },
@@ -91,6 +89,6 @@ html {
     title: <Title title="什么是重排？重绘？" date="2022 - 04 - 15" />,
     value: ''
   }
-]
+];
 
-export const everyDayJSList: everyDayListType[] = []
+export const everyDayJSList: everyDayListType[] = [];

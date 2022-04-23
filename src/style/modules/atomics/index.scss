@@ -206,7 +206,7 @@ $lineHeights: (40, 44, 48, 52, 56);
 $transitionTime: (10, 20, 30);
 @each $time in $transitionTime {
   .transition-#{$time} {
-    transition: all ease #{$time / 100}s;
+    transition: all ease math($time, 100) + s;
   }
 }
 
