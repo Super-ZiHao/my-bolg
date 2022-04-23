@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { ThunderboltOutlined, FolderOpenOutlined } from '@ant-design/icons'
 import { titleList, menuList } from '@/utils/constants'
-// import { printPDF } from '@/utils/function'
 type Props = {
 
 }
@@ -45,10 +44,6 @@ const Home: React.FC<Props> = () => {
             <FolderOpenOutlined />
             <div className="ml-18">作品集</div>
           </div>
-          {/* <div className="home-button-item ml-24" onClick={printPDF}>
-            <FolderOpenOutlined />
-            <div className="ml-18">打印</div>
-          </div> */}
         </div>
       </div>
     </div>
