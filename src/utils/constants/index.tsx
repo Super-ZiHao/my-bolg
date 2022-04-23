@@ -1,3 +1,4 @@
+import { BolgModularType } from '@/types'
 import Battery from '@/views/Works/Battery'
 import Drop from '@/views/Works/Drop'
 import Ripple from '@/views/Works/Ripple'
@@ -13,7 +14,7 @@ export const titleList: string[] = ['zihao~~', '一个', '坚持学习', '努力
  */
 interface menuListType {
   id: number
-  title: string
+  title: BolgModularType
   path: string
 }
 export const menuList: menuListType[] = [

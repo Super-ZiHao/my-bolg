@@ -24,7 +24,7 @@ const EveryDayItem: React.FC<Props> = ({ dataList, title, style }) => {
         )}
         <h1 className="everyday-title convex-text ff-kt">{title}</h1>
         {dataList.length > 0 ? (
-          <Collapse className="everyday-main" style={{ overflow: 'overlay', height: 'calc(100% - 45px)' }}>
+          <Collapse className="everyday-main">
             {dataList.map((item) => (
               <Panel className="item" header={item.title} key={item.id}>
                 {item.value}

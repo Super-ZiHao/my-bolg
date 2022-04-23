@@ -1,7 +1,7 @@
 .everyday {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: minmax(300px, 50%);
+  grid-auto-rows: minmax(600px, 50%);
   gap: 30px;
   border-radius: 15px;
   @media screen and (max-width: 1600px) {
@@ -19,9 +19,12 @@
   min-width: 600px;
 }
 .everyday-main {
+  height: calc(100% - 45px);
   border: none;
-  background-color: transparent;
   padding: 0 16px;
+  background-color: transparent;
+  overflow: overlay;
+  overscroll-behavior: contain;
   .item {
     border: none;
     background-color: peru;

@@ -14,7 +14,13 @@
   cursor: pointer;
   transition: all ease .6s;
   &:hover {
-    color: $color-1;
+    color: #f6d14d;
+  }
+  &:active {
+    color: #fe9b39;
+  }
+  &.selected {
+    color: #F55353 !important;
   }
 }
 .ZH-menu-item-text {

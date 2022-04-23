@@ -1,22 +1,17 @@
 import React from 'react'
-import { useNavigate } from 'react-router'
 
 type MenuItemProps = {
+  onClick?: React.MouseEventHandler<HTMLDivElement>
   className?: string
   icon?: React.ReactNode
   height?: number
-  path?: string
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({ children, className, icon, height = 40, path }) => {
-  const navigate = useNavigate()
+const MenuItem: React.FC<MenuItemProps> = ({ onClick, children, className, icon, height = 40 }) => {
   const textMarginLeft = icon ? 12 : 0
-  const goPath = () => {
-    navigate(path as string)
-  }
   return (
-    <div className={`${className || ''} ZH-menu-item`} style={{ height: height }}>
-      <div className="ZH-menu-item-title" onClick={goPath}>
+    <div className="ZH-menu-item" style={{ height: height }}>
+      <div className={`ZH-menu-item-title ${className || ''}`} onClick={onClick}>
         {icon && icon}
         <div className="ZH-menu-item-text" style={{ marginLeft: textMarginLeft }}>
           {children || '暂无数据'}

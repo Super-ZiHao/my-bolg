@@ -17,7 +17,7 @@ const Home: React.FC<Props> = () => {
   }, [nowTitleIndex])
 
   const goContact = () => {
-    navigate(`/${menuList.find((item) => item.title === '联系')?.path as string}`)
+    navigate(`/${menuList.find((item) => item.title === '关于我')?.path as string}`)
   }
   const goWorks = () => {
     navigate(`/${menuList.find((item) => item.title === '作品集')?.path as string}`)
