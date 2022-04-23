@@ -3,11 +3,32 @@ import EveryDayItem from './EveryDayItem'
 
 type Props = {}
 const Everyday: React.FC<Props> = () => {
-
   return (
     <div className="w-full h-full everyday">
-      <EveryDayItem title='CSS' dataList={everyDayCSSList} />
-      <EveryDayItem title="JavaScript" dataList={everyDayJSList} />
+      <EveryDayItem
+        title="CSS"
+        dataList={everyDayCSSList}
+        style={
+          // @ts-ignore
+          { '--animate-delay': '0s' }
+        }
+      />
+      <EveryDayItem
+        title="JavaScript"
+        dataList={everyDayJSList}
+        style={
+          // @ts-ignore
+          { '--animate-delay': '0.2s' }
+        }
+      />
+      <EveryDayItem
+        title="其他"
+        dataList={everyDayJSList}
+        style={
+          // @ts-ignore
+          { '--animate-delay': '0.4s' }
+        }
+      />
     </div>
   )
 }

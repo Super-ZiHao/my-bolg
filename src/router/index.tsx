@@ -5,6 +5,7 @@ import Home from '@/views/Home'
 import Works from '@/views/Works'
 import Demo from '@/views/Demo'
 import Everyday from '@/views/Everyday'
+import AboutMe from '@/views/AboutMe'
 
 const RouterElement = () => {
   const element = useRoutes([
@@ -28,6 +29,10 @@ const RouterElement = () => {
     {
       path: '/everyday',
       element: <Everyday />
+    },
+    {
+      path: '/about-me',
+      element: <AboutMe />
     }
   ])
   return element
