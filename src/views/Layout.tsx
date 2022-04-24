@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { AlertOutlined, CarryOutOutlined, HomeOutlined, ExperimentOutlined, PhoneOutlined } from '@ant-design/icons'
 import RouterElement from '@/router'
 import Menu from '@/components/Menu'
 import { menuList } from '@/utils/constants'
 import { useCurrentModule, useReplaceCurrentModule } from '@/utils/hooks'
-import { BolgModularPathType } from '@/types'
+import { useLocation } from 'react-router-dom'
 
 const icons: { [t: string]: React.ReactNode } = {
   home: <HomeOutlined />,
@@ -15,8 +15,12 @@ const icons: { [t: string]: React.ReactNode } = {
 }
 
 const Layout = () => {
-  const currentModule = useCurrentModule();
+  const currentModule = useCurrentModule()
   const replaceCurrentModule = useReplaceCurrentModule()
+  const location = useLocation()
+  useEffect(() => {
+    replaceCurrentModule(menuList.find((item) => `/${item.path}` === location.pathname)?.path || 'home');
+  }, [])
   return (
     <div className="layout">
       <div className="sider" style={{ width: '160px' }}>

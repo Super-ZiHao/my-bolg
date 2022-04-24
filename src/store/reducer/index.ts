@@ -1,11 +1,10 @@
-import { BolgModularTitleType } from "@/types"
+import { BolgModularTitleType } from '@/types'
 
 export type initStateType = {
   // 现在的模块
   currentModule: BolgModularTitleType
 }
-
-const initState:initStateType  = {
+const initState: initStateType = {
   // 现在所在博客模块
   currentModule: '首页'
 }
