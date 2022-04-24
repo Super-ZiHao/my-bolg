@@ -1,3 +1,17 @@
 .about-me {
-  
+  color: white !important;
+}
+.icon-head {
+  width: 160px;
+  height: 160px;
+  background-image: url('@/images/icon-head.jpg');
+  background-size: 100%;
+  // 头像位置，定死了，误修改
+  background-position: -29px -33px;
+  transform: rotate(-9deg);
+}
+
+.ant-descriptions-item-content,
+.ant-descriptions-item-label {
+  color: white !important;
 }
