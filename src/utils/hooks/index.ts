@@ -1,9 +1,9 @@
+import { useNavigate } from 'react-router'
 import { useSelector, useDispatch } from 'react-redux'
-import { BolgModularPathType, BolgModularTitleType } from '@/types'
 import { initStateType } from '@/store/reducer'
 import { menuList } from '../constants'
 import { replaceModule } from '@/store/action'
-import { useNavigate } from 'react-router'
+import { BolgModularPathType, BolgModularTitleType } from '@/types'
 
 /**
  * 获取当前所在模块
