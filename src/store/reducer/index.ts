@@ -1,8 +1,8 @@
-import { BolgModularType } from "@/types"
+import { BolgModularTitleType } from "@/types"
 
 export type initStateType = {
   // 现在的模块
-  currentModule: BolgModularType
+  currentModule: BolgModularTitleType
 }
 
 const initState:initStateType  = {
