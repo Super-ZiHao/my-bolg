@@ -1,25 +1,7 @@
 import CodeTitle from '@/components/CodeTitle'
-import { ReactNode } from 'react'
 import Highlight from '@/components/Highlight'
-
-interface TitleProps {
-  title: string
-  date: string
-}
-const Title: React.FC<TitleProps> = ({ title, date }) => {
-  return (
-    <div className="w-full flex justify-between color-white fw-500">
-      <div>{title}</div>
-      <div className="ml-32 no-wrap">{date}</div>
-    </div>
-  )
-}
-
-export type everyDayListType = {
-  id: number
-  title: string | ReactNode
-  value: string | ReactNode
-}
+import Title from './components/Title'
+import { everyDayListType } from './index'
 
 export const everyDayCSSList: everyDayListType[] = [
   {
@@ -98,7 +80,8 @@ html {
     id: 7,
     title: <Title title="回过头复习一下样式的复合写法？" date="2022 - 04 - 19" />,
     value: (
-      <Highlight>{`margin 与 padding 一样
+      <Highlight>
+        {`margin 与 padding 一样
     4：上  右  下  左
     3：上  左/右  下
     2：上/下   左/右
@@ -115,7 +98,22 @@ font: style weight size/line-height family
 background: color image position/size repeat`}
       </Highlight>
     )
+  },
+  {
+    id: 8,
+    title: <Title title="关于打印时候可能会用到的一个样式" date="科普" />,
+    value: (
+      <Highlight>
+        {`{
+  color-adjust: economy; 默认值
+    economy英文直译意思是“经济”，“节省”。
+    表现为，浏览器（或其他客户端）对于元素进行样式上的调整，调整的规则由浏览器自己决定，以免达到更好的输出效果。
+    例如，当打印时，浏览器会选择省略所有背景图像，并调整文本颜色，以确保对比度对于白纸上的阅读是最佳的。
+  color-adjust: exact;
+    exact则是“精确”，“准确”的意思。意思是告诉浏览器，
+    我设置的这些颜色，背景啥的都是有必要的，精确匹配的，你不要自作聪明帮我做调整。
+}`}
+      </Highlight>
+    )
   }
 ]
-
-export const everyDayJSList: everyDayListType[] = []

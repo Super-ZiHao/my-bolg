@@ -5,7 +5,7 @@ type Props = {}
 
 const AboutMe: React.FC<Props> = ({ children }) => {
   return (
-    <div className="w-full h-full bg-white p-16">
+    <div className="about-me w-full h-full bg-white p-16 animate__animated animate__zoomIn">
       <Descriptions title={<Avatar size={128} />}>
         <Descriptions.Item label="姓名">黄子豪</Descriptions.Item>
         <Descriptions.Item label="年龄">21</Descriptions.Item>
