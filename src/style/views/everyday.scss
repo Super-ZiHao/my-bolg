@@ -24,13 +24,10 @@
   padding: 0 16px;
   background-color: transparent;
   overflow: overlay;
-  overscroll-behavior: contain;
   .item {
     border: none;
     background-color: peru;
     border-radius: 8px !important;
-    // .ant-collapse-header {
-    // }
     .ant-collapse-content {
       border-top: 1px solid sandybrown;
       background-color: rgb(219, 157, 95);

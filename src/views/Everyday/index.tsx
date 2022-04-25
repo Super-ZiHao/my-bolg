@@ -4,7 +4,7 @@ import EveryDayItem from './EveryDayItem'
 type Props = {}
 const Everyday: React.FC<Props> = () => {
   return (
-    <div className="w-full h-full everyday">
+    <div className="w-full everyday">
       <EveryDayItem
         title="CSS"
         dataList={everyDayList.everyDayCSSList}
