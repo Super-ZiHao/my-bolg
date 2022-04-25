@@ -6,7 +6,7 @@ export type initStateType = {
 }
 const initState: initStateType = {
   // 现在所在博客模块
-  currentModule: '首页'
+  currentModule: ''
 }
 export const rootReducer = (state = initState, action: any) => {
   switch (action.type) {

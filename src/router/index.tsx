@@ -3,7 +3,7 @@ import { worksList } from '@/utils/constants'
 
 import Home from '@/views/Home'
 import Works from '@/views/Works'
-import Demo from '@/views/Demo'
+import Study from '@/views/Study'
 import Everyday from '@/views/Everyday'
 import AboutMe from '@/views/AboutMe'
 
@@ -24,7 +24,7 @@ const RouterElement = () => {
     },
     {
       path: '/study',
-      element: <Demo />
+      element: <Study />
     },
     {
       path: '/everyday',

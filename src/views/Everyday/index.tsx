@@ -13,20 +13,20 @@ const Everyday: React.FC<Props> = () => {
           { '--animate-delay': '0s' }
         }
       />
-      <EveryDayItem
+      {/* <EveryDayItem
         title="JavaScript"
         dataList={everyDayList.everyDayJSList}
         style={
           // @ts-ignore
           { '--animate-delay': '0.2s' }
         }
-      />
+      /> */}
       <EveryDayItem
         title="其他"
         dataList={everyDayList.everyDayOtherList}
         style={
           // @ts-ignore
-          { '--animate-delay': '0.4s' }
+          { '--animate-delay': '0.2s' }
         }
       />
     </div>
