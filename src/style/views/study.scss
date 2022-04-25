@@ -1,0 +1,26 @@
+.study {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 32px;
+}
+.study-box {
+  background-color: #603601;
+  color: #CC9544;
+  font-size: 48px;
+  line-height: 56px;
+  padding: 32px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: '楷体';
+  &:hover {
+    box-shadow: 0 2px 20px rgb(169, 169, 169);
+    transform: translateY(-5px);
+  }
+  &:active {
+    background-color: #502c01;
+  }
+  & + .study-box {
+    margin-left: 20px;
+  }
+}

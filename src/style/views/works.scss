@@ -59,7 +59,7 @@
   overflow: hidden;
   transition: all 0.5s ease;
   &.significant {
-    color: #3880c0;
+    color: #1890ff;
     text-shadow: 1px 1px 2px white, -1px -1px 2px black;
     box-shadow: 
        3px 0 2px rgba($color: #000000, $alpha: .8),
@@ -94,7 +94,7 @@
 }
 .battery-text {
   width: 400px;
-  background-image: linear-gradient(#000 calc(100% - (var(--battery) * 100%)), pink calc(100% - (var(--battery) * 100%)));
+  background-image: linear-gradient(#000 calc(100% - (var(--battery) * 100%)), #1890ff calc(100% - (var(--battery) * 100%)));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

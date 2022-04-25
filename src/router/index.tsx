@@ -18,13 +18,13 @@ const RouterElement = () => {
       element: <Home />
     },
     {
+      path: '/study',
+      element: <Study />
+    },
+    {
       path: '/works',
       element: <Works />,
       children: worksList
-    },
-    {
-      path: '/study',
-      element: <Study />
     },
     {
       path: '/everyday',

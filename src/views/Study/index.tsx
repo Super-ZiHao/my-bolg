@@ -4,15 +4,30 @@ type Props = {}
 
 const Study: React.FC<Props> = ({ children }) => {
   return (
-    <div className="card works-option animate__animated animate__fadeInRight" style={{ gridAutoRows: '150px' }}>
-      <div
-        className="works-option-item"
-        style={{ width: '100px', height: '50px', backgroundColor: '' }}
+    <div className="study">
+      {/* <div
+        className=""
         onClick={() => {
-          open('https://huangzihao3344.github.io/bolg-sass/')
+          open('https://super-zihao.github.io/learning/#/sass')
         }}
       >
         <div className="ff-kt fs-44 text-center lh-56">Sass</div>
+      </div> */}
+      <div
+        className="study-box animate__animated animate__fadeInDown"
+        onClick={() => {
+          open('https://super-zihao.github.io/learning/#/sass')
+        }}
+      >
+        Sass
+      </div>
+      <div
+        className="study-box animate__animated animate__fadeInDown"
+        onClick={() => {
+          open('https://super-zihao.github.io/learning/#/typescript')
+        }}
+      >
+        TypeScript
       </div>
     </div>
   )

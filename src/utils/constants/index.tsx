@@ -18,14 +18,14 @@ export const menuList: menuListInterface[] = [
     path: 'home'
   },
   {
-    id: 1,
-    title: '作品集',
-    path: 'works'
-  },
-  {
     id: 2,
     title: '学习',
     path: 'study'
+  },
+  {
+    id: 1,
+    title: '作品集',
+    path: 'works'
   },
   {
     id: 3,
