@@ -3,31 +3,41 @@ import React from 'react'
 type Props = {}
 
 const Study: React.FC<Props> = ({ children }) => {
+  const types1 = ['Vue3', 'React', 'TypeScript']
+  const types2 = ['Sass', 'Less', 'Tailwind.css', 'animate.css']
   return (
     <div className="study">
-      {/* <div
-        className=""
-        onClick={() => {
-          open('https://super-zihao.github.io/learning/#/sass')
-        }}
-      >
-        <div className="ff-kt fs-44 text-center lh-56">Sass</div>
-      </div> */}
-      <div
-        className="study-box animate__animated animate__fadeInDown"
-        onClick={() => {
-          open('https://super-zihao.github.io/learning/#/sass')
-        }}
-      >
-        Sass
+      <div className="flex flex-wrap">
+        {types1.map((type, index) => (
+          <div
+            className="study-box1 animate__animated animate__fadeInDown animate__delay-2s"
+            onClick={() => {
+              open(`https://super-zihao.github.io/learning/#/${type.toLowerCase()}`)
+            }}
+            style={{
+              // @ts-ignore
+              '--animate-delay': `${index / 10}s`
+            }}
+          >
+            {type}
+          </div>
+        ))}
       </div>
-      <div
-        className="study-box animate__animated animate__fadeInDown"
-        onClick={() => {
-          open('https://super-zihao.github.io/learning/#/typescript')
-        }}
-      >
-        TypeScript
+      <div className="flex flex-wrap mt-32">
+        {types2.map((type, index) => (
+          <div
+            className="study-box2 animate__animated animate__fadeInDown animate__delay-2s"
+            onClick={() => {
+              open(`https://super-zihao.github.io/learning/#/${type.toLowerCase()}`)
+            }}
+            style={{
+              // @ts-ignore
+              '--animate-delay': `${index / 10}s`
+            }}
+          >
+            {type}
+          </div>
+        ))}
       </div>
     </div>
   )

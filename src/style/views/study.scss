@@ -1,26 +1,35 @@
 .study {
-  display: flex;
-  flex-wrap: wrap;
   padding: 32px;
 }
 .study-box {
-  background-color: #603601;
-  color: #CC9544;
   font-size: 48px;
   line-height: 56px;
   padding: 32px;
   border-radius: 16px;
   cursor: pointer;
-  transition: all .1s;
+  transition: all 0.1s;
   font-family: '楷体';
   &:hover {
-    box-shadow: 0 2px 20px rgb(169, 169, 169);
     transform: scale(1.05) !important;
   }
+
+  & + .study-box {
+    margin-left: 20px;
+  }
+}
+.study-box1 {
+  background-color: #603601;
+  color: #cc9544;
+  @extend .study-box;
   &:active {
     background-color: #502c01;
   }
-  & + .study-box {
-    margin-left: 20px;
+}
+.study-box2 {
+  background-color: #46508f;
+  color: #848ed4;
+  @extend .study-box;
+  &:active {
+    background-color: #313866;
   }
 }
